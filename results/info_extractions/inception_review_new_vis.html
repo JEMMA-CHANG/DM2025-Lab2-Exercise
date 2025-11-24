@@ -1,0 +1,258 @@
+<style>
+.lx-highlight { position: relative; border-radius:3px; padding:1px 2px;}
+.lx-highlight .lx-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  background: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 4px;
+  padding: 6px 8px;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  max-width: 240px;
+  white-space: normal;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.lx-highlight:hover .lx-tooltip { visibility: visible; opacity:1; }
+.lx-animated-wrapper { max-width: 100%; font-family: Arial, sans-serif; }
+.lx-controls {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 8px;
+  padding: 12px; margin-bottom: 16px;
+}
+.lx-button-row {
+  display: flex; justify-content: center; gap: 8px; margin-bottom: 12px;
+}
+.lx-control-btn {
+  background: #4285f4; color: white; border: none; border-radius: 4px;
+  padding: 8px 16px; cursor: pointer; font-size: 13px; font-weight: 500;
+  transition: background-color 0.2s;
+}
+.lx-control-btn:hover { background: #3367d6; }
+.lx-progress-container {
+  margin-bottom: 8px;
+}
+.lx-progress-slider {
+  width: 100%; margin: 0; appearance: none; height: 6px;
+  background: #ddd; border-radius: 3px; outline: none;
+}
+.lx-progress-slider::-webkit-slider-thumb {
+  appearance: none; width: 18px; height: 18px; background: #4285f4;
+  border-radius: 50%; cursor: pointer;
+}
+.lx-progress-slider::-moz-range-thumb {
+  width: 18px; height: 18px; background: #4285f4; border-radius: 50%;
+  cursor: pointer; border: none;
+}
+.lx-status-text {
+  text-align: center; font-size: 12px; color: #666; margin-top: 4px;
+}
+.lx-text-window {
+  font-family: monospace; white-space: pre-wrap; border: 1px solid #90caf9;
+  padding: 12px; max-height: 260px; overflow-y: auto; margin-bottom: 12px;
+  line-height: 1.6;
+}
+.lx-attributes-panel {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 6px;
+  padding: 8px 10px; margin-top: 8px; font-size: 13px;
+}
+.lx-current-highlight {
+  border-bottom: 4px solid #ff4444;
+  font-weight: bold;
+  animation: lx-pulse 1s ease-in-out;
+}
+@keyframes lx-pulse {
+  0% { text-decoration-color: #ff4444; }
+  50% { text-decoration-color: #ff0000; }
+  100% { text-decoration-color: #ff4444; }
+}
+.lx-legend {
+  font-size: 12px; margin-bottom: 8px;
+  padding-bottom: 8px; border-bottom: 1px solid #e0e0e0;
+}
+.lx-label {
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-right: 4px;
+  color: #000;
+}
+.lx-attr-key {
+  font-weight: 600;
+  color: #1565c0;
+  letter-spacing: 0.3px;
+}
+.lx-attr-value {
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 0.2px;
+}
+
+/* Add optimizations with larger fonts and better readability for GIFs */
+.lx-gif-optimized .lx-text-window { font-size: 16px; line-height: 1.8; }
+.lx-gif-optimized .lx-attributes-panel { font-size: 15px; }
+.lx-gif-optimized .lx-current-highlight { text-decoration-thickness: 4px; }
+</style>
+    <div class="lx-animated-wrapper lx-gif-optimized">
+      <div class="lx-attributes-panel">
+        <div class="lx-legend">Highlights Legend: <span class="lx-label" style="background-color:#D2E3FC;">audience_impact</span> <span class="lx-label" style="background-color:#C8E6C9;">opinion_statement</span></div>
+        <div id="attributesContainer"></div>
+      </div>
+      <div class="lx-text-window" id="textWindow">
+        **Page 1**
+&quot;&quot;&quot;
+This isn’t my usual cup of tea but I decided to give it a chance because it was referenced in an 
+episode of The Office. In fact, I think it was referenced in two episodes and that’s when my 
+curiosity was piqued. I wasn’t expecting much, but I came away with a bundle of conflicting 
+thoughts in my head which I think is the mark of some sort of success. At the very least, I was 
+entertained. 
+The first thing I want to say is that <span class="lx-highlight lx-current-highlight" data-idx="0" style="background-color:#C8E6C9;">Emily Blunt completely stole the show here</span>. Meryl Streep is 
+going to do Meryl Streep, and Anne Hathaway’s character is fairly straightforward, but I was 
+<span class="lx-highlight" data-idx="1" style="background-color:#C8E6C9;">astonished at how convincingly Blunt was able to play bitchy, snarky and condescending</span>, all 
+while saying <span class="lx-highlight" data-idx="2" style="background-color:#C8E6C9;">thoroughly entertaining lines</span>. <span class="lx-highlight" data-idx="3" style="background-color:#D2E3FC;">Any scene she was in made me light up</span>, and I was 
+sad when she basically disappeared in the final act. 
+Now, to the themes of this film. It dawned on me quickly that this wasn’t really a film about 
+fashion at all, but about being led into a cult. Having recently watched both Twin Flames 
+documentaries recently, I think I’m more prone to notice how a cult leader is able to indoctrinate 
+others into following them. <span class="lx-highlight" data-idx="4" style="background-color:#C8E6C9;">Anne Hathaway’s character Andrea doesn’t care about fashion at all - 
+much like myself, so she was easy to relate to</span> - but she soon falls under Meryl Streep’s spell 
+after she is constantly negged by her boss and <span class="lx-highlight" data-idx="5" style="background-color:#C8E6C9;">treated as worthless by all her colleagues</span>. 
+<span class="lx-highlight" data-idx="6" style="background-color:#C8E6C9;">Streep’s character, Miranda Priestly, can’t even be bothered to learn Andrea’s name - or 
+purposefully calls her by a different name to make her feel worthless</span>. In an early scene, we see 
+Andrea speak up for herself and correct Miranda, which results in Miranda’s wrath. After being 
+made to do all sorts of humiliating and challenging chores for Miranda, the two have an argument 
+where it seems as if Andrea will be fired. <span class="lx-highlight" data-idx="7" style="background-color:#D2E3FC;">The assertive part of myself was willing for her to stand 
+up for herself and ask that she be treated decently since that’s what she deserves.</span> Instead, she 
+runs off and cries to Stanley Tucci’s character, who gaslights her and says she isn’t trying hard 
+enough. I get it; when I began working in an office, the amount of social pressure I felt made it 
+very difficult for me to ask for more equitable circumstances. Tucci influences her to start wearing 
+more fashionable clothes, which she seems to adjust to instantly. 
+<span class="lx-highlight" data-idx="8" style="background-color:#C8E6C9;">I also want to take a moment here and talk about something I loathe in films like these, where 
+Anne Hathaway’s character is described as fat and ugly by the characters around her.</span> 
+Admittedly, these are the characters that are gaslighting her into part of their cult, but all the 
+same <span class="lx-highlight" data-idx="9" style="background-color:#C8E6C9;">it’s utterly insane to try and cast someone like Anne Hathaway to play some sort of plain 
+Jane.</span> She’s freaking Anne Hathaway. Just look at her. She could look great wearing a plastic 
+rubbish bag or a tarpaulin. <span class="lx-highlight" data-idx="10" style="background-color:#C8E6C9;">It’s crazy that they do the ‘ugly duckling to beautiful swan’ 
+transformation on her in this film.</span> <span class="lx-highlight" data-idx="11" style="background-color:#D2E3FC;">I also think that she seems to adjust too quickly. If it were me, I 
+guess I would try some clothes, but I would never be able to keep it up.</span> 
+Interestingly, her hipster boyfriend uses the term “you drank the Kool-Aid,” <span class="lx-highlight" data-idx="12" style="background-color:#D2E3FC;">because that was 
+exactly what was floating around my head at that time.</span> She’s in a cult where everyone is 
+obsessed with Miranda, and that’s really what I think this film is about. 
+<span class="lx-highlight" data-idx="13" style="background-color:#C8E6C9;">Then there’s the disgusting Christian Thompson character, whose ulterior motives are so clear 
+that they don’t seem ulterior at all.</span> Why on earth would this successful businessman be suddenly 
+interested in an assistant for anything other than wanting to sleep with her or get closer to 
+Miranda? He feigns interest in her writing, but she naively believes it. <span class="lx-highlight" data-idx="14" style="background-color:#C8E6C9;">It was really galling to 
+watch her be this naive, but I suppose <span class="lx-highlight" data-idx="15" style="background-color:#D2E3FC;">it’s good if a film can make you feel that way.</span></span> 
+<span class="lx-highlight" data-idx="16" style="background-color:#C8E6C9;">I was quite enjoying the ride of seeing Andrea getting sucked more and more into the cult, losing 
+her friends and her boyfriend along the way</span>, and <span class="lx-highlight" data-idx="17" style="background-color:#D2E3FC;">was interested in the outcome</span>. However, <span class="lx-highlight" data-idx="18" style="background-color:#C8E6C9;">the</span>
+&quot;&quot;&quot;
+
+**Page 2**
+&quot;&quot;&quot;
+ending was bitterly disappointing. All it takes is a few words from Miranda for Andrea to suddenly 
+realise “I don’t want to be like you” and then walk away, throw her work phone in a Parisian 
+fountain and suffer absolutely no consequences. <span class="lx-highlight" data-idx="19" style="background-color:#C8E6C9;">It is monumentally difficult to extract yourself 
+from a cult, to have to unplug yourself from that mindset, and it is <span class="lx-highlight" data-idx="20" style="background-color:#D2E3FC;">emotionally challenging to 
+reckon with the damage that cult has done to your psyche</span></span>. Andrea seems to snap straight back 
+to her old self, but who knows if there’s any lasting damage? Her boyfriend takes her back, 
+Miranda recommends her for a job and then even gives one of her coveted ‘rare smiles’ to close 
+the film. <span class="lx-highlight" data-idx="21" style="background-color:#C8E6C9;">Utter hogwash</span>, and <span class="lx-highlight" data-idx="22" style="background-color:#C8E6C9;">it suggests that it’s a good thing that Miranda gave her the smile that 
+everyone in the fashion industry clamours for</span>. <span class="lx-highlight" data-idx="23" style="background-color:#C8E6C9;">I don’t think the film quite acknowledges just how 
+harmful Miranda’s character is and doesn’t punish her enough at the end to make this a ‘happy 
+ending</span>’. 
+On the one hand, <span class="lx-highlight" data-idx="24" style="background-color:#C8E6C9;">it presents a rather accurate portrayal of how a cult can be, with a charismatic 
+cult leader who can be ruthless to their subjects and with other members participating in the 
+brainwashing</span>. On the other hand, <span class="lx-highlight" data-idx="25" style="background-color:#C8E6C9;">the film misses some beats, especially near the end that would 
+have made this tale more realistic and satisfying</span>. At the very least, <span class="lx-highlight" data-idx="26" style="background-color:#C8E6C9;">Emily Blunt’s character <span class="lx-highlight" data-idx="27" style="background-color:#D2E3FC;">made 
+me laugh a ton</span></span>. My favourite moment was when she uttered “What a pile of bollocks!” between 
+mouthfuls of chocolate pudding in the hospital.
+&quot;&quot;&quot;
+
+
+      </div>
+      <div class="lx-controls">
+        <div class="lx-button-row">
+          <button class="lx-control-btn" onclick="playPause()">▶️ Play</button>
+          <button class="lx-control-btn" onclick="prevExtraction()">⏮ Previous</button>
+          <button class="lx-control-btn" onclick="nextExtraction()">⏭ Next</button>
+        </div>
+        <div class="lx-progress-container">
+          <input type="range" id="progressSlider" class="lx-progress-slider"
+                 min="0" max="27" value="0"
+                 onchange="jumpToExtraction(this.value)">
+        </div>
+        <div class="lx-status-text">
+          Entity <span id="entityInfo">1/28</span> |
+          Pos <span id="posInfo">[449-491]</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const extractions = [{"index": 0, "class": "opinion_statement", "text": "Emily Blunt completely stole the show here", "color": "#C8E6C9", "startPos": 449, "endPos": 491, "beforeText": "\nthoughts in my head which I think is the mark of some sort of success. At the very least, I was \nentertained. \nThe first thing I want to say is that ", "extractionText": "Emily Blunt completely stole the show here", "afterText": ". Meryl Streep is \ngoing to do Meryl Streep, and Anne Hathaway\u2019s character is fairly straightforward, but I was \nastonished at how convincingly Blunt ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Emily Blunt&#x27;s performance</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">completely stole the show</span>}</div>"}, {"index": 1, "class": "opinion_statement", "text": "astonished at how convincingly Blunt was able to play bitchy, snarky and condescending", "color": "#C8E6C9", "startPos": 604, "endPos": 690, "beforeText": " Blunt completely stole the show here. Meryl Streep is \ngoing to do Meryl Streep, and Anne Hathaway\u2019s character is fairly straightforward, but I was \n", "extractionText": "astonished at how convincingly Blunt was able to play bitchy, snarky and condescending", "afterText": ", all \nwhile saying thoroughly entertaining lines. Any scene she was in made me light up, and I was \nsad when she basically disappeared in the final a", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Emily Blunt&#x27;s performance</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">convincingly play bitchy, snarky and condescending</span>}</div>"}, {"index": 2, "class": "opinion_statement", "text": "thoroughly entertaining lines", "color": "#C8E6C9", "startPos": 710, "endPos": 739, "beforeText": "acter is fairly straightforward, but I was \nastonished at how convincingly Blunt was able to play bitchy, snarky and condescending, all \nwhile saying ", "extractionText": "thoroughly entertaining lines", "afterText": ". Any scene she was in made me light up, and I was \nsad when she basically disappeared in the final act. \nNow, to the themes of this film. It dawned o", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The lines</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">thoroughly entertaining</span>}</div>"}, {"index": 3, "class": "audience_impact", "text": "Any scene she was in made me light up", "color": "#D2E3FC", "startPos": 741, "endPos": 778, "beforeText": ", but I was \nastonished at how convincingly Blunt was able to play bitchy, snarky and condescending, all \nwhile saying thoroughly entertaining lines. ", "extractionText": "Any scene she was in made me light up", "afterText": ", and I was \nsad when she basically disappeared in the final act. \nNow, to the themes of this film. It dawned on me quickly that this wasn\u2019t really a ", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">happy, entertained</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">Emily Blunt&#x27;s scenes</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the reviewer</span>}</div>"}, {"index": 4, "class": "opinion_statement", "text": "Anne Hathaway\u2019s character Andrea doesn\u2019t care about fashion at all - much like myself, so she was easy to relate to", "color": "#C8E6C9", "startPos": 1159, "endPos": 1275, "beforeText": "hed both Twin Flames \ndocumentaries recently, I think I\u2019m more prone to notice how a cult leader is able to indoctrinate \nothers into following them. ", "extractionText": "Anne Hathaway\u2019s character Andrea doesn\u2019t care about fashion at all - \nmuch like myself, so she was easy to relate to", "afterText": " - but she soon falls under Meryl Streep\u2019s spell \nafter she is constantly negged by her boss and treated as worthless by all her colleagues. \nStreep\u2019s", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Andrea&#x27;s character</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">easy to relate to</span>}</div>"}, {"index": 5, "class": "opinion_statement", "text": "treated as worthless by all her colleagues", "color": "#C8E6C9", "startPos": 1372, "endPos": 1414, "beforeText": "all - \nmuch like myself, so she was easy to relate to - but she soon falls under Meryl Streep\u2019s spell \nafter she is constantly negged by her boss and ", "extractionText": "treated as worthless by all her colleagues", "afterText": ". \nStreep\u2019s character, Miranda Priestly, can\u2019t even be bothered to learn Andrea\u2019s name - or \npurposefully calls her by a different name to make her fe", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Andrea&#x27;s colleagues&#x27; treatment of her</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">treated as worthless</span>}</div>"}, {"index": 6, "class": "opinion_statement", "text": "Streep\u2019s character, Miranda Priestly, can\u2019t even be bothered to learn Andrea\u2019s name - or purposefully calls her by a different name to make her feel worthless", "color": "#C8E6C9", "startPos": 1417, "endPos": 1576, "beforeText": "elate to - but she soon falls under Meryl Streep\u2019s spell \nafter she is constantly negged by her boss and treated as worthless by all her colleagues. \n", "extractionText": "Streep\u2019s character, Miranda Priestly, can\u2019t even be bothered to learn Andrea\u2019s name - or \npurposefully calls her by a different name to make her feel worthless", "afterText": ". In an early scene, we see \nAndrea speak up for herself and correct Miranda, which results in Miranda\u2019s wrath. After being \nmade to do all sorts of h", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Miranda Priestly&#x27;s treatment of Andrea</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">make her feel worthless</span>}</div>"}, {"index": 7, "class": "audience_impact", "text": "The assertive part of myself was willing for her to stand up for herself and ask that she be treated decently since that\u2019s what she deserves.", "color": "#D2E3FC", "startPos": 1842, "endPos": 1984, "beforeText": "r being \nmade to do all sorts of humiliating and challenging chores for Miranda, the two have an argument \nwhere it seems as if Andrea will be fired. ", "extractionText": "The assertive part of myself was willing for her to stand \nup for herself and ask that she be treated decently since that\u2019s what she deserves.", "afterText": " Instead, she \nruns off and cries to Stanley Tucci\u2019s character, who gaslights her and says she isn\u2019t trying hard \nenough. I get it; when I began worki", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">supportive, empathetic</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">Andrea&#x27;s situation</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the reviewer</span>}</div>"}, {"index": 8, "class": "opinion_statement", "text": "I also want to take a moment here and talk about something I loathe in films like these, where Anne Hathaway\u2019s character is described as fat and ugly by the characters around her.", "color": "#C8E6C9", "startPos": 2366, "endPos": 2546, "beforeText": "me to ask for more equitable circumstances. Tucci influences her to start wearing \nmore fashionable clothes, which she seems to adjust to instantly. \n", "extractionText": "I also want to take a moment here and talk about something I loathe in films like these, where \nAnne Hathaway\u2019s character is described as fat and ugly by the characters around her.", "afterText": " \nAdmittedly, these are the characters that are gaslighting her into part of their cult, but all the \nsame it\u2019s utterly insane to try and cast someone", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The portrayal of Anne Hathaway&#x27;s character as fat and ugly</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">I loathe</span>}</div>"}, {"index": 9, "class": "opinion_statement", "text": "it\u2019s utterly insane to try and cast someone like Anne Hathaway to play some sort of plain Jane.", "color": "#C8E6C9", "startPos": 2653, "endPos": 2749, "beforeText": " fat and ugly by the characters around her. \nAdmittedly, these are the characters that are gaslighting her into part of their cult, but all the \nsame ", "extractionText": "it\u2019s utterly insane to try and cast someone like Anne Hathaway to play some sort of plain \nJane.", "afterText": " She\u2019s freaking Anne Hathaway. Just look at her. She could look great wearing a plastic \nrubbish bag or a tarpaulin. It\u2019s crazy that they do the \u2018ugly", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The casting of Anne Hathaway</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">utterly insane</span>}</div>"}, {"index": 10, "class": "opinion_statement", "text": "It\u2019s crazy that they do the \u2018ugly duckling to beautiful swan\u2019 transformation on her in this film.", "color": "#C8E6C9", "startPos": 2866, "endPos": 2964, "beforeText": "to play some sort of plain \nJane. She\u2019s freaking Anne Hathaway. Just look at her. She could look great wearing a plastic \nrubbish bag or a tarpaulin. ", "extractionText": "It\u2019s crazy that they do the \u2018ugly duckling to beautiful swan\u2019 \ntransformation on her in this film.", "afterText": " I also think that she seems to adjust too quickly. If it were me, I \nguess I would try some clothes, but I would never be able to keep it up. \nIntere", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The &#x27;ugly duckling to beautiful swan&#x27; transformation</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">crazy</span>}</div>"}, {"index": 11, "class": "audience_impact", "text": "I also think that she seems to adjust too quickly. If it were me, I guess I would try some clothes, but I would never be able to keep it up.", "color": "#D2E3FC", "startPos": 2965, "endPos": 3106, "beforeText": "eat wearing a plastic \nrubbish bag or a tarpaulin. It\u2019s crazy that they do the \u2018ugly duckling to beautiful swan\u2019 \ntransformation on her in this film. ", "extractionText": "I also think that she seems to adjust too quickly. If it were me, I \nguess I would try some clothes, but I would never be able to keep it up.", "afterText": " \nInterestingly, her hipster boyfriend uses the term \u201cyou drank the Kool-Aid,\u201d because that was \nexactly what was floating around my head at that time", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">relatable, skeptical</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">The character&#x27;s quick adjustment</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the reviewer</span>}</div>"}, {"index": 12, "class": "audience_impact", "text": "because that was exactly what was floating around my head at that time.", "color": "#D2E3FC", "startPos": 3185, "endPos": 3257, "beforeText": "uess I would try some clothes, but I would never be able to keep it up. \nInterestingly, her hipster boyfriend uses the term \u201cyou drank the Kool-Aid,\u201d ", "extractionText": "because that was \nexactly what was floating around my head at that time.", "afterText": " She\u2019s in a cult where everyone is \nobsessed with Miranda, and that\u2019s really what I think this film is about. \nThen there\u2019s the disgusting Christian T", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">recognition, understanding</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">The use of the term &#x27;you drank the Kool-Aid&#x27;</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the reviewer</span>}</div>"}, {"index": 13, "class": "opinion_statement", "text": "Then there\u2019s the disgusting Christian Thompson character, whose ulterior motives are so clear that they don\u2019t seem ulterior at all.", "color": "#C8E6C9", "startPos": 3368, "endPos": 3500, "beforeText": "s floating around my head at that time. She\u2019s in a cult where everyone is \nobsessed with Miranda, and that\u2019s really what I think this film is about. \n", "extractionText": "Then there\u2019s the disgusting Christian Thompson character, whose ulterior motives are so clear \nthat they don\u2019t seem ulterior at all.", "afterText": " Why on earth would this successful businessman be suddenly \ninterested in an assistant for anything other than wanting to sleep with her or get close", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The Christian Thompson character</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">disgusting</span>}</div>"}, {"index": 14, "class": "opinion_statement", "text": "It was really galling to watch her be this naive, but I suppose it\u2019s good if a film can make you feel that way.", "color": "#C8E6C9", "startPos": 3729, "endPos": 3841, "beforeText": "ssistant for anything other than wanting to sleep with her or get closer to \nMiranda? He feigns interest in her writing, but she naively believes it. ", "extractionText": "It was really galling to \nwatch her be this naive, but I suppose it\u2019s good if a film can make you feel that way.", "afterText": " \nI was quite enjoying the ride of seeing Andrea getting sucked more and more into the cult, losing \nher friends and her boyfriend along the way, and ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The character&#x27;s naivety</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">really galling</span>}</div>"}, {"index": 15, "class": "audience_impact", "text": "it\u2019s good if a film can make you feel that way.", "color": "#D2E3FC", "startPos": 3794, "endPos": 3841, "beforeText": " closer to \nMiranda? He feigns interest in her writing, but she naively believes it. It was really galling to \nwatch her be this naive, but I suppose ", "extractionText": "it\u2019s good if a film can make you feel that way.", "afterText": " \nI was quite enjoying the ride of seeing Andrea getting sucked more and more into the cult, losing \nher friends and her boyfriend along the way, and ", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">reflective</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">The film&#x27;s ability to evoke strong emotions</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the viewer</span>}</div>"}, {"index": 16, "class": "opinion_statement", "text": "I was quite enjoying the ride of seeing Andrea getting sucked more and more into the cult, losing her friends and her boyfriend along the way", "color": "#C8E6C9", "startPos": 3843, "endPos": 3985, "beforeText": "iting, but she naively believes it. It was really galling to \nwatch her be this naive, but I suppose it\u2019s good if a film can make you feel that way. \n", "extractionText": "I was quite enjoying the ride of seeing Andrea getting sucked more and more into the cult, losing \nher friends and her boyfriend along the way", "afterText": ", and was interested in the outcome. However, the\n&quot;&quot;&quot;\n\n**Page 2**\n&quot;&quot;&quot;\nending was bitterly disappointing. All it takes is a few words from Miranda for ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The plot</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">quite enjoying the ride</span>}</div>"}, {"index": 17, "class": "audience_impact", "text": "was interested in the outcome", "color": "#D2E3FC", "startPos": 3991, "endPos": 4020, "beforeText": " \nI was quite enjoying the ride of seeing Andrea getting sucked more and more into the cult, losing \nher friends and her boyfriend along the way, and ", "extractionText": "was interested in the outcome", "afterText": ". However, the\n&quot;&quot;&quot;\n\n**Page 2**\n&quot;&quot;&quot;\nending was bitterly disappointing. All it takes is a few words from Miranda for Andrea to suddenly \nrealise \u201cI don\u2019", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">interested</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">The plot</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the reviewer</span>}</div>"}, {"index": 18, "class": "opinion_statement", "text": "the ending was bitterly disappointing", "color": "#C8E6C9", "startPos": 4031, "endPos": 4034, "beforeText": "g Andrea getting sucked more and more into the cult, losing \nher friends and her boyfriend along the way, and was interested in the outcome. However, ", "extractionText": "the", "afterText": "\n&quot;&quot;&quot;\n\n**Page 2**\n&quot;&quot;&quot;\nending was bitterly disappointing. All it takes is a few words from Miranda for Andrea to suddenly \nrealise \u201cI don\u2019t want to be l", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The ending</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">bitterly disappointing</span>}</div>"}, {"index": 19, "class": "opinion_statement", "text": "It is monumentally difficult to extract yourself from a cult, to have to unplug yourself from that mindset, and it is emotionally challenging to reckon with the damage that cult has done to your psyche", "color": "#C8E6C9", "startPos": 4297, "endPos": 4500, "beforeText": "ddenly \nrealise \u201cI don\u2019t want to be like you\u201d and then walk away, throw her work phone in a Parisian \nfountain and suffer absolutely no consequences. ", "extractionText": "It is monumentally difficult to extract yourself \nfrom a cult, to have to unplug yourself from that mindset, and it is emotionally challenging to \nreckon with the damage that cult has done to your psyche", "afterText": ". Andrea seems to snap straight back \nto her old self, but who knows if there\u2019s any lasting damage? Her boyfriend takes her back, \nMiranda recommends ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The cult&#x27;s impact on psyche</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">monumentally difficult and emotionally challenging</span>}</div>"}, {"index": 20, "class": "audience_impact", "text": "emotionally challenging to reckon with the damage that cult has done to your psyche", "color": "#D2E3FC", "startPos": 4416, "endPos": 4500, "beforeText": "er absolutely no consequences. It is monumentally difficult to extract yourself \nfrom a cult, to have to unplug yourself from that mindset, and it is ", "extractionText": "emotionally challenging to \nreckon with the damage that cult has done to your psyche", "afterText": ". Andrea seems to snap straight back \nto her old self, but who knows if there\u2019s any lasting damage? Her boyfriend takes her back, \nMiranda recommends ", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">distressed, traumatized</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">The cult&#x27;s impact on psyche</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the reviewer</span>}</div>"}, {"index": 21, "class": "opinion_statement", "text": "Utter hogwash", "color": "#C8E6C9", "startPos": 4737, "endPos": 4750, "beforeText": "ting damage? Her boyfriend takes her back, \nMiranda recommends her for a job and then even gives one of her coveted \u2018rare smiles\u2019 to close \nthe film. ", "extractionText": "Utter hogwash", "afterText": ", and it suggests that it\u2019s a good thing that Miranda gave her the smile that \neveryone in the fashion industry clamours for. I don\u2019t think the film q", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film&#x27;s resolution</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">Utter hogwash</span>}</div>"}, {"index": 22, "class": "opinion_statement", "text": "it suggests that it\u2019s a good thing that Miranda gave her the smile that everyone in the fashion industry clamours for", "color": "#C8E6C9", "startPos": 4756, "endPos": 4874, "beforeText": "yfriend takes her back, \nMiranda recommends her for a job and then even gives one of her coveted \u2018rare smiles\u2019 to close \nthe film. Utter hogwash, and ", "extractionText": "it suggests that it\u2019s a good thing that Miranda gave her the smile that \neveryone in the fashion industry clamours for", "afterText": ". I don\u2019t think the film quite acknowledges just how \nharmful Miranda\u2019s character is and doesn\u2019t punish her enough at the end to make this a \u2018happy \ne", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film&#x27;s message</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">suggests that it&#x27;s a good thing</span>}</div>"}, {"index": 23, "class": "opinion_statement", "text": "I don\u2019t think the film quite acknowledges just how harmful Miranda\u2019s character is and doesn\u2019t punish her enough at the end to make this a \u2018happy ending\u2019", "color": "#C8E6C9", "startPos": 4876, "endPos": 5029, "beforeText": "\nthe film. Utter hogwash, and it suggests that it\u2019s a good thing that Miranda gave her the smile that \neveryone in the fashion industry clamours for. ", "extractionText": "I don\u2019t think the film quite acknowledges just how \nharmful Miranda\u2019s character is and doesn\u2019t punish her enough at the end to make this a \u2018happy \nending", "afterText": "\u2019. \nOn the one hand, it presents a rather accurate portrayal of how a cult can be, with a charismatic \ncult leader who can be ruthless to their subjec", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film&#x27;s portrayal of Miranda</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">doesn&#x27;t acknowledge how harmful and doesn&#x27;t punish her enough</span>}</div>"}, {"index": 24, "class": "opinion_statement", "text": "it presents a rather accurate portrayal of how a cult can be, with a charismatic cult leader who can be ruthless to their subjects and with other members participating in the brainwashing", "color": "#C8E6C9", "startPos": 5050, "endPos": 5239, "beforeText": "uite acknowledges just how \nharmful Miranda\u2019s character is and doesn\u2019t punish her enough at the end to make this a \u2018happy \nending\u2019. \nOn the one hand, ", "extractionText": "it presents a rather accurate portrayal of how a cult can be, with a charismatic \ncult leader who can be ruthless to their subjects and with other members participating in the \nbrainwashing", "afterText": ". On the other hand, the film misses some beats, especially near the end that would \nhave made this tale more realistic and satisfying. At the very le", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The portrayal of the cult</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">rather accurate portrayal</span>}</div>"}, {"index": 25, "class": "opinion_statement", "text": "the film misses some beats, especially near the end that would have made this tale more realistic and satisfying", "color": "#C8E6C9", "startPos": 5260, "endPos": 5373, "beforeText": ", with a charismatic \ncult leader who can be ruthless to their subjects and with other members participating in the \nbrainwashing. On the other hand, ", "extractionText": "the film misses some beats, especially near the end that would \nhave made this tale more realistic and satisfying", "afterText": ". At the very least, Emily Blunt\u2019s character made \nme laugh a ton. My favourite moment was when she uttered \u201cWhat a pile of bollocks!\u201d between \nmouthf", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film&#x27;s pacing and realism</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">misses some beats</span>}</div>"}, {"index": 26, "class": "opinion_statement", "text": "Emily Blunt\u2019s character made me laugh a ton", "color": "#C8E6C9", "startPos": 5394, "endPos": 5438, "beforeText": "the other hand, the film misses some beats, especially near the end that would \nhave made this tale more realistic and satisfying. At the very least, ", "extractionText": "Emily Blunt\u2019s character made \nme laugh a ton", "afterText": ". My favourite moment was when she uttered \u201cWhat a pile of bollocks!\u201d between \nmouthfuls of chocolate pudding in the hospital.\n&quot;&quot;&quot;\n\n", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Emily Blunt&#x27;s character</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">made me laugh a ton</span>}</div>"}, {"index": 27, "class": "audience_impact", "text": "made me laugh a ton", "color": "#D2E3FC", "startPos": 5418, "endPos": 5438, "beforeText": " misses some beats, especially near the end that would \nhave made this tale more realistic and satisfying. At the very least, Emily Blunt\u2019s character ", "extractionText": "made \nme laugh a ton", "afterText": ". My favourite moment was when she uttered \u201cWhat a pile of bollocks!\u201d between \nmouthfuls of chocolate pudding in the hospital.\n&quot;&quot;&quot;\n\n", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">amused, entertained</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">Emily Blunt&#x27;s character</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the reviewer</span>}</div>"}];
+        let currentIndex = 0;
+        let isPlaying = false;
+        let animationInterval = null;
+        let animationSpeed = 1.0;
+
+        function updateDisplay() {
+          const extraction = extractions[currentIndex];
+          if (!extraction) return;
+
+          document.getElementById('attributesContainer').innerHTML = extraction.attributesHtml;
+          document.getElementById('entityInfo').textContent = (currentIndex + 1) + '/' + extractions.length;
+          document.getElementById('posInfo').textContent = '[' + extraction.startPos + '-' + extraction.endPos + ']';
+          document.getElementById('progressSlider').value = currentIndex;
+
+          const playBtn = document.querySelector('.lx-control-btn');
+          if (playBtn) playBtn.textContent = isPlaying ? '⏸ Pause' : '▶️ Play';
+
+          const prevHighlight = document.querySelector('.lx-text-window .lx-current-highlight');
+          if (prevHighlight) prevHighlight.classList.remove('lx-current-highlight');
+          const currentSpan = document.querySelector('.lx-text-window span[data-idx="' + currentIndex + '"]');
+          if (currentSpan) {
+            currentSpan.classList.add('lx-current-highlight');
+            currentSpan.scrollIntoView({block: 'center', behavior: 'smooth'});
+          }
+        }
+
+        function nextExtraction() {
+          currentIndex = (currentIndex + 1) % extractions.length;
+          updateDisplay();
+        }
+
+        function prevExtraction() {
+          currentIndex = (currentIndex - 1 + extractions.length) % extractions.length;
+          updateDisplay();
+        }
+
+        function jumpToExtraction(index) {
+          currentIndex = parseInt(index);
+          updateDisplay();
+        }
+
+        function playPause() {
+          if (isPlaying) {
+            clearInterval(animationInterval);
+            isPlaying = false;
+          } else {
+            animationInterval = setInterval(nextExtraction, animationSpeed * 1000);
+            isPlaying = true;
+          }
+          updateDisplay();
+        }
+
+        window.playPause = playPause;
+        window.nextExtraction = nextExtraction;
+        window.prevExtraction = prevExtraction;
+        window.jumpToExtraction = jumpToExtraction;
+
+        updateDisplay();
+      })();
+    </script>
